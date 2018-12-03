@@ -2,17 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { createGlobalStyle } from 'styled-components';
 
-import Header from './header';
-import './layout.css';
+/* Global Styling */
+import 'normalize.css';
+import 'bootstrap/dist/css/bootstrap-grid.css';
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif;
+  }
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
         site {
+          buildTime
           siteMetadata {
             title
+            description
+            keywords
           }
         }
       }
@@ -22,22 +33,41 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content: data.site.siteMetadata.description,
+            },
+            {
+              name: 'keywords',
+              content: data.site.siteMetadata.keywords,
+            },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          css={`
-            margin: 0 auto;
-            max-width: 960px;
-            padding: 0px 1.0875rem 1.45rem;
-            padding-top: 0;
-          `}
-        >
-          {children}
+        <GlobalStyle />
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <h1>{data.site.siteMetadata.title}</h1>
+            </div>
+          </div>
+        </div>
+        {children}
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div
+                css={`
+                  text-align: center;
+                `}
+              >
+                <span>
+                  © Copyright {new Date(data.site.buildTime).getFullYear()}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </>
     )}
