@@ -2,17 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import { createGlobalStyle } from 'styled-components';
-
-/* Global Styling */
-import 'normalize.css';
-import 'bootstrap/dist/css/bootstrap-grid.css';
-
-const GlobalStyle = createGlobalStyle`
-  html {
-    font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif;
-  }
-`;
+import GlobalStyles from './global-styling';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -45,30 +35,8 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <GlobalStyle />
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <h1>{data.site.siteMetadata.title}</h1>
-            </div>
-          </div>
-        </div>
+        <GlobalStyles />
         {children}
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <div
-                css={`
-                  text-align: center;
-                `}
-              >
-                <span>
-                  © Copyright {new Date(data.site.buildTime).getFullYear()}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
       </>
     )}
   />
