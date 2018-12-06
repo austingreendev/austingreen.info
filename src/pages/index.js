@@ -36,7 +36,7 @@ const IndexPage = () => (
           >
             <h1
               css={`
-                font-size: 72px;
+                font-size: 54px;
                 margin-bottom: 0px;
               `}
             >
