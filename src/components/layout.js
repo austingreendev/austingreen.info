@@ -4,12 +4,11 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import GlobalStyles from './global-styling';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
         site {
-          buildTime
           siteMetadata {
             title
             description
@@ -21,7 +20,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={`${data.site.siteMetadata.title} | ${title}`}
           meta={[
             {
               name: 'description',
@@ -44,6 +43,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Layout;
