@@ -8,9 +8,6 @@ const IndexPage = () => (
   <StaticQuery
     query={graphql`
       query {
-        site {
-          buildTime
-        }
         placeholderImage: file(relativePath: { eq: "profile-image.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
@@ -23,93 +20,28 @@ const IndexPage = () => (
     render={data => (
       <Layout title="Full-stack engineer, living in San Francisco.">
         <>
-          <div
-            css={`
-              max-width: 800px;
-              margin: 0 auto;
-              padding: 0 20px;
-
-              @media (max-width: 900px) {
-                max-width: inherit;
-              }
-            `}
-          >
-            <h1
+          <p>
+            Hi! I'm a full-stack developer working primarily with JavaScript and
+            React. Specializing in helping developers create more robust,
+            accessible, and pleasant user experiences through shared component
+            libraries, mentorship, and developer education.
+          </p>
+          <p>
+            I'm currently a Senior Software Engineer on the{' '}
+            <a href="https://garden.zendesk.com/">Garden Design System</a> team
+            at <a href="https://www.zendesk.com/">Zendesk</a>.
+          </p>
+          <div>
+            <Img
               css={`
-                font-size: 54px;
-                margin-bottom: 0px;
+                border-radius: 8px;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
               `}
-            >
-              Austin Green
-            </h1>
-            <h2
-              css={`
-                margin: 12px 0;
-              `}
-            >
-              Full-stack engineer, living in San Francisco.
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui{' '}
-              <a href="https://www.google.com">officia deserunt</a> mollit anim
-              id est laborum.
-            </p>
-            <div>
-              <Img
-                css={`
-                  border-radius: 8px;
-                  width: 100%;
-                  max-width: 250px;
-                  margin: 0 auto;
-                `}
-                alt="Profile image"
-                fluid={data.placeholderImage.childImageSharp.fluid}
-              />
-            </div>
-            <ul
-              css={`
-                list-style: none;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 0;
-                margin: 32px 0;
-
-                li {
-                  margin: 0 12px;
-                }
-              `}
-            >
-              <li>
-                <a href="https://github.com/austin94">GitHub</a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/austin-green-dev/">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://garden.zendesk.com/">Zendesk Garden</a>
-              </li>
-              <li>
-                <a href="mailto:austingreenkansas@gmail.com">Email</a>
-              </li>
-            </ul>
-            <div
-              css={`
-                text-align: center;
-                font-size: 12px;
-                margin: 12px 0;
-              `}
-            >
-              Last Updated: {new Date(data.site.buildTime).toLocaleDateString()}
-            </div>
+              alt="Profile image"
+              fluid={data.placeholderImage.childImageSharp.fluid}
+            />
           </div>
         </>
       </Layout>

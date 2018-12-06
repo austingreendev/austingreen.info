@@ -9,6 +9,7 @@ const Layout = ({ children, title }) => (
     query={graphql`
       query SiteTitleQuery {
         site {
+          buildTime
           siteMetadata {
             title
             description
@@ -35,7 +36,70 @@ const Layout = ({ children, title }) => (
           <html lang="en" />
         </Helmet>
         <GlobalStyles />
-        {children}
+
+        <div
+          css={`
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+
+            @media (max-width: 900px) {
+              max-width: inherit;
+            }
+          `}
+        >
+          <h1
+            css={`
+              font-size: 54px;
+              margin-bottom: 0px;
+            `}
+          >
+            Austin Green
+          </h1>
+          <h2
+            css={`
+              margin: 12px 0;
+            `}
+          >
+            {title}
+          </h2>
+          {children}
+          <ul
+            css={`
+              list-style: none;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              padding: 0;
+              margin: 32px 0;
+
+              li {
+                margin: 0 12px;
+              }
+            `}
+          >
+            <li>
+              <a href="https://github.com/austin94">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/austin-green-dev/">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="mailto:austingreenkansas@gmail.com">Email</a>
+            </li>
+          </ul>
+          <div
+            css={`
+              text-align: center;
+              font-size: 12px;
+              margin: 12px 0;
+            `}
+          >
+            Last Updated: {new Date(data.site.buildTime).toLocaleDateString()}
+          </div>
+        </div>
       </>
     )}
   />
