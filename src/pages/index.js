@@ -18,7 +18,7 @@ const IndexPage = () => (
       }
     `}
     render={data => (
-      <Layout title="TEST PR CHECKS Full-stack engineer, living in San Francisco.">
+      <Layout title="ANOTHER CHANGE TEST PR CHECKS Full-stack engineer, living in San Francisco.">
         <>
           <p>
             Hi! I'm a full-stack developer working primarily with JavaScript and
