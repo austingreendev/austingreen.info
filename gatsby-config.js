@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Austin Green',
-    description: 'Todo description',
+    description:
+      'Austin Green is a full-stack engineer living and working in San Francisco. Focusing on front-end technologies and accessible user interaction.',
     keywords:
       'austin green, software, react, angular, javascript, c#, zendesk, delphix',
   },

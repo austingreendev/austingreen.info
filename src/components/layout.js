@@ -50,7 +50,8 @@ const Layout = ({ children, title }) => (
         >
           <h1
             css={`
-              font-size: 54px;
+              font-family: 'Playfair Display', serif;
+              font-size: 62px;
               margin-bottom: 0px;
             `}
           >
@@ -58,6 +59,9 @@ const Layout = ({ children, title }) => (
           </h1>
           <h2
             css={`
+              font-family: 'Playfair Display', serif;
+              font-size: 34px;
+              font-weight: 400;
               margin: 12px 0;
             `}
           >
