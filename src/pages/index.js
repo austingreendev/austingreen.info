@@ -27,7 +27,7 @@ const IndexPage = () => (
             libraries, mentorship, and developer education.
           </p>
           <p>
-            I'm currently a Senior Software Engineer on the{' '}
+            I'm currently a Staff Software Engineer on the{' '}
             <a href="https://garden.zendesk.com/">Garden Design System</a> team
             at <a href="https://www.zendesk.com/">Zendesk</a>.
           </p>
