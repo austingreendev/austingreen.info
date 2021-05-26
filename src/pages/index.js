@@ -27,7 +27,7 @@ const IndexPage = () => (
             libraries, mentorship, and developer education.
           </p>
           <p>
-            I'm currently a Senior Software Engineer on Exploratory Data Analysis team
+            I'm currently a Senior Software Engineer on the Exploratory Data Analysis team
             at <a href="https://databricks.com/">Databricks</a>.
           </p>
           <div>
