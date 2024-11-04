@@ -18,7 +18,7 @@ const IndexPage = () => (
       }
     `}
     render={data => (
-      <Layout title="Full-stack engineer, living in Portland.">
+      <Layout title="Full-stack engineer, living in Seattle.">
         <>
           <p>
             Hi! I'm a full-stack developer working primarily with JavaScript and
@@ -27,7 +27,7 @@ const IndexPage = () => (
             libraries, mentorship, and developer education.
           </p>
           <p>
-            I'm currently a Senior Software Engineer on the Exploratory Data Analysis team
+            I'm currently a Staff Software Engineer on the Sharing and Collaboration team
             at <a href="https://databricks.com/">Databricks</a>.
           </p>
           <div>
