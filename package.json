@@ -29,7 +29,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "deploy": "wrangler pages deploy public",
+    "deploy": "wrangler pages deploy public --project-name austingreen --branch main",
     "format": "prettier --write \"src/**/*.js\" \"*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
